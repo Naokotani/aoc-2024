@@ -3,7 +3,7 @@
    [clojure.string :as str]))
 
 (def input
-  (slurp  "resources/puzzle.txt"))
+  (slurp  "resources/day-one.txt"))
 
 (def list-one
   (sort < (map #(Integer/parseInt %) (map #(first (str/split % #" ")) (str/split input #"\n")))))
@@ -22,7 +22,7 @@
 (defn question-one []
   (loop [l1 list-one
          l2 list-two
-       result 0]
+         result 0]
   (if (empty? l1)
     (println result)
     (recur
